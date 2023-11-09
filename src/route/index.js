@@ -21,12 +21,10 @@ class User {
     this.#list.push(user)
   }
 
-  static getList = () => {
-    return this.#list
-  }
+  static getList = () => this.#list
 
   static getById = (id) =>
-    this.#list.findIndex((user) => user.id === id)
+    this.#list.find((user) => user.id === id)
 
   static deleteById = (id) => {
     const index = this.#list.findIndex(
@@ -52,7 +50,8 @@ class User {
       return false
     }
   }
-  static update = (user, {}) => {
+
+  static update = (user, { email }) => {
     if (email) {
       user.email = email
     }
