@@ -210,6 +210,7 @@ class Product {
 // ================================================================
 
 router.get('/product-create', function (req, res) {
+  const list = Product.getList()
   res.render('product-create', {
     style: 'product-create',
   })
@@ -219,10 +220,9 @@ router.get('/product-create', function (req, res) {
 
 router.post('/product-create', function (req, res) {
   const { name, price, description } = req.body
-
   const product = new Product(name, price, description)
-
-  Product.add = product
+  Product.add(product)
+  console.log(Product.getList())
 
   res.render('alert', {
     style: 'alert',
@@ -233,11 +233,17 @@ router.post('/product-create', function (req, res) {
 // ================================================================
 
 router.get('/product-list', function (req, res) {
-  const productList = Product.getList()
+  const list = Product.getList()
 
+  console.log(list)
   res.render('product-list', {
     style: 'product-list',
-    productList,
+    data: {
+      products: {
+        list,
+        isEmpty: list.length === 0,
+      },
+    },
   })
 })
 

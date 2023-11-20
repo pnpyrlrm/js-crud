@@ -1,5 +1,8 @@
-{{#with data}}
-{{#each productList}}
+{{#with data.products}}
+{{#if isEmpty}}
+<mark>Пустий</mark>
+{{else}}
+{{#each list}}
 <div class="page__content-card">
   <div>{{name}}</div>
   <div class="simple_font">{{description}}</div>
@@ -9,5 +12,6 @@
     <a href="/product-edit?id={{id}}" class="link text-blue">Редагувати</a>
   </div>
 </div>
-{{#each}}
+{{/each}}
+{{/if}}
 {{/with}}
