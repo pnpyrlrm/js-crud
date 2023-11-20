@@ -1,0 +1,28 @@
+.page {
+  margin-top: 16px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+}
+.page__title {
+  font-size: 24px;
+  padding-bottom: 16px;
+}
+.page__button {
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: blue;
+  color: #fff;
+  padding: 12px 48px;
+}
+.page__block-right {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  flex-direction: row-reverse;
+}
+
+/*# sourceMappingURL=style.css.map */

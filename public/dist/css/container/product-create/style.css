@@ -1,0 +1,61 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 32px;
+}
+.form__title {
+  font-size: 32px;
+  font-weight: bold;
+  color: blue;
+}
+
+.card {
+  display: grid;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  gap: 16px;
+}
+.card__title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 12px;
+  margin-left: 12px;
+}
+.card__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px;
+  margin-bottom: 0;
+  width: 100%;
+}
+.card__label {
+  font-size: 14px;
+}
+.card__input {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 100%;
+}
+.card__info {
+  font-size: 12px;
+  color: #ddd;
+}
+.card__button {
+  background-color: blue;
+  border-radius: 4px;
+  margin: 12px;
+}
+
+.in_row {
+  display: flex;
+}
+
+.button__text {
+  display: grid;
+  color: #fff;
+  margin: 8px;
+}
+
+/*# sourceMappingURL=style.css.map */

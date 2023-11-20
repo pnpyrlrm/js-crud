@@ -1,0 +1,77 @@
+.page {
+  padding: 16px;
+}
+.page__title {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 0 0 40px 0;
+  color: blue;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 16px;
+  gap: 32px;
+}
+.form__title {
+  font-size: 24px;
+  padding-bottom: 4px;
+}
+.form__content {
+  display: grid;
+  gap: 16px;
+}
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form__label {
+  font-size: 14px;
+}
+.form__input {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+}
+.form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+}
+.form__block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.form__block-button {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.form .simple_font {
+  font-size: 12px;
+  color: #ddd;
+}
+.form .color-blue {
+  background-color: blue;
+}
+.form .color-red {
+  background-color: red;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/*# sourceMappingURL=style.css.map */
