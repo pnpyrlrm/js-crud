@@ -45,7 +45,11 @@
   display: flex;
   justify-content: space-between;
 }
-.page .link {
+.page__card-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+.page .product__edit {
   text-decoration: none;
 }
 .page .simple_font {

@@ -144,7 +144,7 @@ router.post('/user-update', function (req, res) {
 class Product {
   static #list = []
 
-  constructor(id, createDate, name, price, description) {
+  constructor(name, price, description) {
     this.id =
       Math.floor(Math.random() * (99999 - 10000 + 1)) +
       10000
@@ -251,40 +251,49 @@ router.get('/product-list', function (req, res) {
 
 router.get('/product-edit', function (req, res) {
   const { id } = req.query
-
   const product = Product.getById(Number(id))
-
+  // console.log(product)
   if (product) {
-    res.render('product-edit', {
+    return res.render('product-edit', {
       style: 'product-edit',
-      product,
+      data: {
+        name: product.name,
+        price: product.price,
+        id: product.id,
+        description: product.description,
+      },
     })
   } else {
-    res.render('alert', {
+    return res.render('alert', {
       style: 'alert',
-      info: `Товар з ID ${id} не знайдено...`,
+      info: 'Продукту за таким ID не знайдено',
     })
   }
 })
-
+// ↑↑ сюди вводимо JSON дані
 // ================================================================
 
 router.post('/product-edit', function (req, res) {
-  const { name, price, description } = req.body
-  const { id } = req.body
-
-  result = Product.updateById(Number(id), {
+  const { id, name, price, description } = req.body
+  const product = Product.updateById(Number(id), {
     name,
     price,
     description,
   })
-
-  res.render('alert', {
-    style: 'alert',
-    info: result
-      ? 'Товар успішно був оновлений'
-      : 'Сталася помилка! Товар не був оновлений!',
-  })
+  console.log(id)
+  console.log(product)
+  if (product) {
+    res.render('product-alert', {
+      style: 'product-alert',
+      info: 'Інформація про товар оновлена',
+    })
+  } else {
+    res.render('alert', {
+      style: 'alert',
+      info: 'Сталася помилка',
+    })
+  }
+  // ↑↑ сюди вводимо JSON дані
 })
 
 // ================================================================
