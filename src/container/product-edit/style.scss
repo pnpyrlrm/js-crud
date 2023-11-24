@@ -1,0 +1,93 @@
+@use '../../lib/service.scss' as s;
+
+.page {
+  padding: s.space(4);
+
+  &__title {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 0 0 s.space(10) 0;
+    color: s.color('primary');
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid s.color('light');
+  border-radius: s.space(4);
+  padding: s.space(4);
+
+  gap: s.space(8);
+
+  &__title {
+    font-size: 24px;
+    padding-bottom: s.space(1);
+  }
+
+  &__content {
+    display: grid;
+    gap: s.space(4);
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(2);
+  }
+
+  &__label {
+    font-size: 14px;
+  }
+
+  &__input {
+    border: 1px solid s.color('light');
+    padding: s.space(2);
+    border-radius: 4px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid s.color('light');
+    border-radius: 5px;
+
+    color: s.color('white-text');
+    text-decoration: none;
+
+    padding: s.space(2);
+  }
+
+  &__block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: s.space(4);
+  }
+
+  &__block-button {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: s.space(4);
+  }
+
+  .simple_font {
+    font-size: 12px;
+    color: s.color('light')
+  }
+
+  .color-blue {
+    background-color: s.color('primary');
+  }
+
+  .color-red {
+    background-color: s.color('error');
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: s.space(10);
+}

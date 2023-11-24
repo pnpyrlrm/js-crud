@@ -1,0 +1,41 @@
+<main>
+  <section>
+    <div class="page">
+      <h1 class="page__title">Редагування товару</h1>
+      <div class="form">
+        {{#with data}}
+        <form method="POST" action="/product-edit">
+          <div class="form__content">
+            <h2 class="form__title">Інформація про товар</h2>
+            <div class="form__block">
+              <div class="form__field">
+                <label for="name" class="form__label">Назва товару</label>
+                <input type="text" name="name" class="form__input" value="{{name}}">
+              </div>
+              <div class="form__field">
+                <label for="price" class="form__label">Ціна</label>
+                <input type="number" name="price" class="form__input" value="{{price}}">
+              </div>
+              <div class="form__field">
+                <label for="id" class="form__label">ID</label>
+                <input type="number" name="id" class="form__input" value="{{id}}">
+              </div>
+            </div>
+            <div class="form__field">
+              <label for="description" class="form__label">Короткий опис товару</label>
+              <input name="description" class="form__input">{{description}}</input>
+              <span class="simple_font">Відображується у картці товару</span>
+            </div>
+            <input type="number" name="id" class="form__input" value="{{id}}" style="display: none;">
+            <div class="form__block-button">
+              <button class="form__button color-blue">Зберегти оновлення</button>
+              <a href="/product-delete?id={{id}}" class="form__button color-red">Видалити
+                товар</a>
+            </div>
+          </div>
+        </form>
+        {{/with}}
+      </div>
+    </div>
+  </section>
+</main>
