@@ -3,6 +3,7 @@ $colorMap: (
   primary: blue,
   error: red,
   white-text: #fff,
+  dark: #000,
 );
 
 @function color ($key) {
